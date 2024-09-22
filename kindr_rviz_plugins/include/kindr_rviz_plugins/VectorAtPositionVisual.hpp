@@ -4,7 +4,7 @@
 #include <rviz/default_plugin/markers/text_view_facing_marker.h>
 
 // kindr ros
-#include <kindr_msgs/VectorAtPosition.h>
+#include <kindr_msgs/msg/VectorAtPosition.h>
 
 
 namespace Ogre {
@@ -24,7 +24,7 @@ namespace kindr_rviz_plugins {
 // Declare the visual class for this display.
 //
 // Each instance of VectorAtPositionVisual represents the visualization of a single
-// sensor_msgs::VectorAtPosition message. Currently it just shows an arrow with
+// sensor_msgs::msg::VectorAtPosition message. Currently it just shows an arrow with
 // the direction and magnitude of the acceleration vector, but could
 // easily be expanded to include more of the message data.
 class VectorAtPositionVisual
@@ -38,7 +38,7 @@ public:
   virtual ~VectorAtPositionVisual();
 
   // Configure the visual to show the data in the message.
-  void setMessage(const kindr_msgs::VectorAtPosition::ConstPtr& msg);
+  void setMessage(const kindr_msgs::msg::VectorAtPosition::ConstPtr& msg);
 
   // Set the pose of the coordinate frame the message refers to.
   // These could be done inside setMessage(), but that would require

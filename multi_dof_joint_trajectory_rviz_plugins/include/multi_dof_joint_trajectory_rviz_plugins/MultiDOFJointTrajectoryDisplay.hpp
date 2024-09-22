@@ -6,7 +6,7 @@
 #include <boost/circular_buffer.hpp>
 
 #include <rviz/message_filter_display.h>
-#include <trajectory_msgs/MultiDOFJointTrajectory.h>
+#include <trajectory_msgs/msg/MultiDOFJointTrajectory.h>
 #endif
 
 #include <OGRE/OgreSceneNode.h>
@@ -28,7 +28,7 @@
 
 namespace multi_dof_joint_trajectory_rviz_plugins {
 
-class MultiDOFJointTrajectoryDisplay: public rviz::MessageFilterDisplay<trajectory_msgs::MultiDOFJointTrajectory>
+class MultiDOFJointTrajectoryDisplay: public rviz::MessageFilterDisplay<trajectory_msgs::msg::MultiDOFJointTrajectory>
 {
 Q_OBJECT
 public:
@@ -73,7 +73,7 @@ private Q_SLOTS:
   void updateTrajectory();
 
 private:
-  void processMessage(const trajectory_msgs::MultiDOFJointTrajectory::ConstPtr& msg);
+  void processMessage(const trajectory_msgs::msg::MultiDOFJointTrajectory::ConstPtr& msg);
 
   void updateShowConnection();
   void updateShowTransformRotation();
@@ -153,7 +153,7 @@ private:
   float font_size_;
   bool show_text_;
 
-  trajectory_msgs::MultiDOFJointTrajectory::ConstPtr current_trajectory_;
+  trajectory_msgs::msg::MultiDOFJointTrajectory::ConstPtr current_trajectory_;
 };
 
 } // multi_dof_joint_trajectory_rviz_plugins

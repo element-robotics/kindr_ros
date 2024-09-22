@@ -9,7 +9,7 @@
 
 #include <rviz/default_plugin/markers/text_view_facing_marker.h>
 
-#include <trajectory_msgs/MultiDOFJointTrajectoryPoint.h>
+#include <trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.h>
 
 
 namespace multi_dof_joint_trajectory_rviz_plugins {
@@ -20,8 +20,8 @@ public:
   MultiDOFJointTrajectoryPointConnectionVisual(
       Ogre::SceneManager* scene_manager,
       Ogre::SceneNode* parent_node,
-      const trajectory_msgs::MultiDOFJointTrajectoryPoint& from,
-      const trajectory_msgs::MultiDOFJointTrajectoryPoint& to,
+      const trajectory_msgs::msg::MultiDOFJointTrajectoryPoint& from,
+      const trajectory_msgs::msg::MultiDOFJointTrajectoryPoint& to,
       float show_connection,
       const Ogre::ColourValue& color);
   virtual ~MultiDOFJointTrajectoryPointConnectionVisual();

@@ -33,7 +33,7 @@
 #include <kindr/Core>
 
 // ros
-#include <geometry_msgs/Quaternion.h>
+#include <geometry_msgs/msg/quaternion.hpp>
 
 
 namespace kindr_ros {
@@ -41,7 +41,7 @@ namespace kindr_ros {
 
 template<typename PrimType_>
 inline static void convertFromRosGeometryMsg(
-    const geometry_msgs::Quaternion& geometryQuaternionMsg,
+    const geometry_msgs::msg::Quaternion& geometryQuaternionMsg,
     kindr::RotationQuaternion<PrimType_>& rotationQuaternion)
 {
   rotationQuaternion.setValues(static_cast<PrimType_>(geometryQuaternionMsg.w),
@@ -53,7 +53,7 @@ inline static void convertFromRosGeometryMsg(
 template<typename PrimType_>
 inline static void convertToRosGeometryMsg(
     const kindr::RotationQuaternion<PrimType_>& rotationQuaternion,
-    geometry_msgs::Quaternion& geometryQuaternionMsg)
+    geometry_msgs::msg::Quaternion& geometryQuaternionMsg)
 {
   geometryQuaternionMsg.w = static_cast<double>(rotationQuaternion.w());
   geometryQuaternionMsg.x = static_cast<double>(rotationQuaternion.x());

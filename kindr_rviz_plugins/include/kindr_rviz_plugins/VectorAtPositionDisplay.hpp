@@ -8,7 +8,7 @@
 #include <rviz/message_filter_display.h>
 
 // kindr ros
-#include <kindr_msgs/VectorAtPosition.h>
+#include <kindr_msgs/msg/VectorAtPosition.h>
 
 // ogre
 #include <OGRE/OgreColourValue.h>
@@ -48,7 +48,7 @@ class VectorAtPositionVisual;
 // themselves are represented by a separate class, VectorAtPositionVisual. The
 // idiom for the visuals is that when the objects exist, they appear
 // in the scene, and when they are deleted, they disappear.
-class VectorAtPositionDisplay: public rviz::MessageFilterDisplay<kindr_msgs::VectorAtPosition>
+class VectorAtPositionDisplay: public rviz::MessageFilterDisplay<kindr_msgs::msg::VectorAtPosition>
 {
 Q_OBJECT
 public:
@@ -82,7 +82,7 @@ private Q_SLOTS:
 
   // Function to handle an incoming ROS message.
 private:
-  void processMessage(const kindr_msgs::VectorAtPosition::ConstPtr& msg);
+  void processMessage(const kindr_msgs::msg::VectorAtPosition::ConstPtr& msg);
 
   // Storage for the list of visuals. It is a circular buffer where
   // data gets popped from the front (oldest) and pushed to the back (newest)
@@ -103,7 +103,7 @@ private:
   Ogre::ColourValue color_;
   float alpha_;
 
-  kindr_msgs::VectorAtPosition::ConstPtr current_vector_at_position_;
+  kindr_msgs::msg::VectorAtPosition::ConstPtr current_vector_at_position_;
 };
 
 } // kindr_rviz_plugins

@@ -12,7 +12,7 @@
 
 #include <rviz/default_plugin/markers/text_view_facing_marker.h>
 
-#include <trajectory_msgs/MultiDOFJointTrajectoryPoint.h>
+#include <trajectory_msgs/msg/MultiDOFJointTrajectoryPoint.h>
 
 
 namespace multi_dof_joint_trajectory_rviz_plugins {
@@ -23,7 +23,7 @@ public:
   MultiDOFJointTrajectoryPointVisual(
       Ogre::SceneManager* scene_manager,
       Ogre::SceneNode* parent_node,
-      const trajectory_msgs::MultiDOFJointTrajectoryPoint& msg,
+      const trajectory_msgs::msg::MultiDOFJointTrajectoryPoint& msg,
       bool show_transform_rotation,
       bool show_velocity_linear,
       bool show_velocity_angular,

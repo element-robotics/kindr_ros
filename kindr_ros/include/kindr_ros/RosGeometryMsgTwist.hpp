@@ -33,7 +33,7 @@
 #include <kindr/Core>
 
 // ros
-#include <geometry_msgs/Twist.h>
+#include <geometry_msgs/msg/twist.hpp>
 
 // kindr ros
 #include "kindr_ros/RosGeometryMsgPhysicalQuantities.hpp"
@@ -44,7 +44,7 @@ namespace kindr_ros {
 
 template<typename PrimType_, typename PositionDiff_, typename RotationDiff_>
 inline static void convertFromRosGeometryMsg(
-    const geometry_msgs::Twist& geometryTwistMsg,
+    const geometry_msgs::msg::Twist& geometryTwistMsg,
     kindr::Twist<PrimType_, PositionDiff_, RotationDiff_>& twist)
 {
   convertFromRosGeometryMsg(geometryTwistMsg.linear, twist.getTranslationalVelocity());
@@ -54,7 +54,7 @@ inline static void convertFromRosGeometryMsg(
 template<typename PrimType_, typename PositionDiff_, typename RotationDiff_>
 inline static void convertToRosGeometryMsg(
     const kindr::Twist<PrimType_, PositionDiff_, RotationDiff_>& twist,
-    geometry_msgs::Twist& geometryTwistMsg)
+    geometry_msgs::msg::Twist& geometryTwistMsg)
 {
   convertToRosGeometryMsg(twist.getTranslationalVelocity(), geometryTwistMsg.linear);
   convertToRosGeometryMsg(twist.getRotationalVelocity(), geometryTwistMsg.angular);
